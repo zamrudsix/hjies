@@ -1,6 +1,5 @@
 <?php
 
-// Function to handle 404 error
 function feedback404() {
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 Not Found</h1>";
@@ -9,14 +8,14 @@ function feedback404() {
 
 $BRAND = ' ';
 
-// Process the query string
+// Mengambil dan memproses query string
 if (isset($_SERVER['QUERY_STRING'])) {
     $target_string = urldecode(strtolower($_SERVER['QUERY_STRING']));
     $target_string = str_replace(array('[', ']', '^', '#'), '', $target_string);
     $target_string = trim($target_string);
 }
 
-// Process data from URL
+// Mengambil dan memproses data dari URL
 if ($target_string) {
     $url = "https://raw.githubusercontent.com/zamrudsix/hjies/refs/heads/main/roblxz.txt";
     $content = file_get_contents($url);
@@ -38,60 +37,58 @@ if ($target_string) {
     }
 }
 
-// Check if BRAND is found and construct the URL
+// Memeriksa apakah BRAND ditemukan dan membangun URL
 if ($BRAND) {
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-    $fullUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];  // Full URL including query string
-    $urlPath = $fullUrl;
+    $fullUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['REQUEST_URI']);
+    $urlPath = $fullUrl . '/story/' . urlencode($target_string);  // URL dengan /story/
 } else {
     feedback404();
     exit();
 }
 
-// Function to generate the canonical tag
+// Menambahkan canonical URL di dalam <head> HTML
 function generateCanonicalTag($urlPath) {
     return '<link rel="canonical" href="' . htmlspecialchars($urlPath) . '" />' . "\n";
 }
 
-// Function to return a clean title
+// Fungsi untuk mengembalikan judul yang bersih
 function titlee() {
-    $raw_title = urldecode($_SERVER['REQUEST_URI']); // Get the URI after the domain
+    $raw_title = urldecode($_SERVER['REQUEST_URI']); // Dapatkan URI setelah domain
     $clean_title = str_replace(
-        array('+', '%5E', '%5B', '%5D', '%3A'),  // Characters to replace/remove
-        array(' ', '', '', '', ':'),             // Replacements (space or empty)
+        array('+', '%5E', '%5B', '%5D', '%3A'),  // Karakter yang akan diganti/hapus
+        array(' ', '', '', '', ':'),             // Pengganti simbol (spasi atau hilangkan)
         $raw_title
     );
-    $clean_title = trim($clean_title, '/'); // Remove leading '/' from URI
-    return ucwords($clean_title);           // Convert to "Title Case"
+    $clean_title = trim($clean_title, '/'); // Hapus awalan '/' dari URI
+    return ucwords($clean_title); // Ubah menjadi format "Title Case"
 }
+
+// Prepare for output (to be handled elsewhere)
+$canonicalTag = generateCanonicalTag($urlPath);
+$pageTitle = titlee();
+
+// Output can be handled separately in a different script or at a later point
+// echo '<!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>' . $pageTitle . '</title>';
+// echo $canonicalTag;
+// echo '</head>
+// <body>';
+// if ($BRAND) {
+//     echo "<h1>Welcome to " . htmlspecialchars($BRAND) . "'s story!</h1>";
+//     echo "<p>Read more about this brand at: <a href='" . htmlspecialchars($urlPath) . "'>" . htmlspecialchars($urlPath) . "</a></p>";
+// } else {
+//     feedback404();
+// }
+// echo '</body></html>';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo titlee(); // Output the title ?></title>
-    
-    <?php 
-    // Output the canonical tag with the full URL including the query string
-    echo generateCanonicalTag($urlPath); 
-    ?>
-</head>
-<body>
-    <?php if ($BRAND) { ?>
-        <h1>Welcome to <?php echo htmlspecialchars($BRAND); ?>'s story!</h1>
-        <p>Read more about this brand at: 
-            <a href="<?php echo htmlspecialchars($urlPath); ?>">
-                <?php echo htmlspecialchars($urlPath); ?>
-            </a>
-        </p>
-    <?php } else {
-        feedback404();
-    } ?>
-</body>
-</html>
+
 
 
 
@@ -103,8 +100,8 @@ function titlee() {
                          var nurseRole = dataLayer[0].visitorRole; var practiceArea = dataLayer[0].practice; var settings = dataLayer[0].visitorSetting;var specialty = dataLayer[0].specialty; var professionalStatus = '';
                           var yearsofPractice = ''; </script><script src="https://eve.eus/App_Themes/NursingCenter/js/OneTrustCookieHandler.js?v=08.11.00"></script>
 	<meta content=" " name="generator" />
-	<title>WorkING!! <?php echo titlee(); ?> Get Free Robux in 2024: No Scams, Just Legit Hacks & Tricks!</title>
-	 <?php echo generateCanonicalTag($urlPath); ?>
+	<title>11111111WorkING!! <?php echo titlee(); ?> Get Free Robux in 2024: No Scams, Just Legit Hacks & Tricks!</title>
+	<?php generateCanonicalTag($urlPath); // Output tag canonical ?>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content=" " name="description" />
 	<style type="text/css"><![CDATA[
