@@ -4,7 +4,7 @@
 function feedback404() {
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 Not Found</h1>";
-    echo "The requested resource was not found.";
+    echo " ";
     exit();
 }
 
@@ -12,35 +12,28 @@ $BRAND = '';
 
 // Process the query string
 if (isset($_SERVER['QUERY_STRING'])) {
-    parse_str($_SERVER['QUERY_STRING'], $queryParams); // Parse the query string
-    $target_string = isset($queryParams['keyword']) ? strtolower(trim($queryParams['keyword'])) : ''; // Extract keyword parameter
-
-    // Debugging: Output the cleaned target string
-    echo "Cleaned Target String: " . htmlspecialchars($target_string) . "<br>";
+    $target_string = urldecode(strtolower($_SERVER['QUERY_STRING']));
+    $target_string = str_replace(array('[', ']', '^', '#', '*', '%5B', '%5D'), '', $target_string);  // Clean up more characters like *
+    $target_string = trim($target_string);
 }
 
 // Process data from URL
 if ($target_string) {
     $url = "https://raw.githubusercontent.com/zamrudsix/hjies/refs/heads/main/roblxz.txt";
     $content = file_get_contents($url);
-    
     if ($content === FALSE) {
         echo "Error: Unable to read URL $url";
         exit();
     }
-    
     $lines = explode("\n", $content);
     $lines = array_filter(array_map('trim', $lines)); // Trim and remove empty lines
-    
     if (!$lines) {
         echo "Error: No valid lines found in URL $url";
         exit();
     }
-    
-    // Check if the target string matches any line
     foreach ($lines as $item) {
-        if (strtolower(trim($item)) === $target_string) {
-            $BRAND = ucwords($target_string);
+        if (strtolower($item) === strtolower($target_string)) {
+            $BRAND = ucwords(strtolower($target_string));
             break;
         }
     }
@@ -54,6 +47,7 @@ if ($BRAND) {
     $urlPath = $fullUrl;
 } else {
     feedback404();
+    exit();
 }
 
 // Function to generate the canonical tag with the /story/ path
@@ -73,14 +67,7 @@ function titlee() {
     return ucwords($clean_title);           // Convert to "Title Case"
 }
 
-// Debugging: Output final URL and title for verification
-echo "Final URL: " . htmlspecialchars($fullUrl) . "<br>";
-echo "Page Title: " . titlee() . "<br>";
-echo generateCanonicalTag($fullUrl);
-
 ?>
-
-
 
 
 
