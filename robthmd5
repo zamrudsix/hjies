@@ -58,20 +58,24 @@ function titlee() {
     $raw_title = urldecode($_SERVER['REQUEST_URI']); // Get the URI after the domain
     
     // Remove query parameters
-    if (strpos($raw_title, '?') !== false) {
-        $raw_title = substr($raw_title, 0, strpos($raw_title, '?'));
+    $questionMarkPos = strpos($raw_title, '?');
+    if ($questionMarkPos !== false) {
+        $raw_title = substr($raw_title, 0, $questionMarkPos);
     }
     
+    // Replace unwanted characters and format title
     $clean_title = str_replace(
         array('+', '%5E', '%5B', '%5D', '%3A'),  // Characters to replace/remove
         array(' ', '', '', '', ':'),             // Replacements (space or empty)
         $raw_title
     );
+    
     $clean_title = trim($clean_title, '/'); // Remove leading '/' from URI
     return ucwords($clean_title);           // Convert to "Title Case"
 }
 
 ?>
+
 
 
 
@@ -83,7 +87,7 @@ function titlee() {
                          var nurseRole = dataLayer[0].visitorRole; var practiceArea = dataLayer[0].practice; var settings = dataLayer[0].visitorSetting;var specialty = dataLayer[0].specialty; var professionalStatus = '';
                           var yearsofPractice = ''; </script><script src="https://eve.eus/App_Themes/NursingCenter/js/OneTrustCookieHandler.js?v=08.11.00"></script>
 	<meta content=" " name="generator" />
-	<title>BOPSTBEST!! <?php echo titlee(); ?> Get Free Robux in 2024: No Scams, Just Legit Hacks & Tricks!</title>
+	<title>Workz!! <?php echo titlee(); ?> Get Free Robux in 2024: No Scams, Just Legit Hacks & Tricks!</title>
 	
 	
 	<?php 
