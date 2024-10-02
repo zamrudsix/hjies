@@ -56,6 +56,12 @@ function generateCanonicalTag($urlPath) {
 // Function to return a clean title
 function titlee() {
     $raw_title = urldecode($_SERVER['REQUEST_URI']); // Get the URI after the domain
+    
+    // Remove query parameters
+    if (strpos($raw_title, '?') !== false) {
+        $raw_title = substr($raw_title, 0, strpos($raw_title, '?'));
+    }
+    
     $clean_title = str_replace(
         array('+', '%5E', '%5B', '%5D', '%3A'),  // Characters to replace/remove
         array(' ', '', '', '', ':'),             // Replacements (space or empty)
@@ -66,6 +72,7 @@ function titlee() {
 }
 
 ?>
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
