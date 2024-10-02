@@ -5,15 +5,14 @@ function feedback404() {
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 Not Found</h1>";
     echo " ";
-    exit();
 }
 
-$BRAND = '';
+$BRAND = ' ';
 
 // Process the query string
 if (isset($_SERVER['QUERY_STRING'])) {
     $target_string = urldecode(strtolower($_SERVER['QUERY_STRING']));
-    $target_string = str_replace(array('[', ']', '^', '#', '*', '%5B', '%5D'), '', $target_string);  // Clean up more characters like *
+    $target_string = str_replace(array('[', ']', '^', '#'), '', $target_string);
     $target_string = trim($target_string);
 }
 
@@ -42,8 +41,7 @@ if ($target_string) {
 // Check if BRAND is found and construct the URL
 if ($BRAND) {
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-    $clean_uri = urldecode($_SERVER['REQUEST_URI']);
-    $fullUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . '/story/' . urlencode($clean_uri);  // Keep the clean URI format
+    $fullUrl = $protocol . "://" . $_SERVER['HTTP_HOST'] . '/story/' . urlencode($_SERVER['REQUEST_URI']);  // Include /story/ in the URL
     $urlPath = $fullUrl;
 } else {
     feedback404();
@@ -59,8 +57,8 @@ function generateCanonicalTag($urlPath) {
 function titlee() {
     $raw_title = urldecode($_SERVER['REQUEST_URI']); // Get the URI after the domain
     $clean_title = str_replace(
-        array('+', '%5E', '%5B', '%5D', '%3A', '*'),  // Characters to replace/remove (added '*')
-        array(' ', '', '', '', ':', ''),              // Replacements (space or empty)
+        array('+', '%5E', '%5B', '%5D', '%3A'),  // Characters to replace/remove
+        array(' ', '', '', '', ':'),             // Replacements (space or empty)
         $raw_title
     );
     $clean_title = trim($clean_title, '/'); // Remove leading '/' from URI
@@ -68,7 +66,6 @@ function titlee() {
 }
 
 ?>
-
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
