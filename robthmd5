@@ -12,10 +12,9 @@ $BRAND = '';
 
 // Process the query string
 if (isset($_SERVER['QUERY_STRING'])) {
-    $target_string = urldecode(strtolower($_SERVER['QUERY_STRING']));
-    $target_string = str_replace(array('[', ']', '^', '#', '*', '%5B', '%5D'), '', $target_string);  // Clean up more characters like *
-    $target_string = trim($target_string);
-    
+    parse_str($_SERVER['QUERY_STRING'], $queryParams); // Parse the query string
+    $target_string = isset($queryParams['keyword']) ? strtolower(trim($queryParams['keyword'])) : ''; // Extract keyword parameter
+
     // Debugging: Output the cleaned target string
     echo "Cleaned Target String: " . htmlspecialchars($target_string) . "<br>";
 }
@@ -40,8 +39,8 @@ if ($target_string) {
     
     // Check if the target string matches any line
     foreach ($lines as $item) {
-        if (strtolower(trim($item)) === strtolower($target_string)) {
-            $BRAND = ucwords(strtolower($target_string));
+        if (strtolower(trim($item)) === $target_string) {
+            $BRAND = ucwords($target_string);
             break;
         }
     }
@@ -84,6 +83,7 @@ echo generateCanonicalTag($fullUrl);
 
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="head"><script type="text/javascript" src="https://cdn.cookielaw.org/consent/35e271f7-4a8c-44d4-965f-49d4f8d465ef/OtAutoBlock.js" ></script><script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="35e271f7-4a8c-44d4-965f-49d4f8d465ef" ></script><script type="text/javascript"> function OptanonWrapper() { } </script><script> var dataLayer = [{'visitorID':'','visitorLoginState':'not-logged-in','visitorType':'public','pageTitle':'Lippincott NursingCenter | Professional Development for Nurses','visitorEducation':'','visitorRole':'','visitorRegistrationDate':'','specialty':'','visitorUpdatedProfileDate': '','visitorSetting':'','practice':''}];
@@ -92,7 +92,7 @@ echo generateCanonicalTag($fullUrl);
                          var nurseRole = dataLayer[0].visitorRole; var practiceArea = dataLayer[0].practice; var settings = dataLayer[0].visitorSetting;var specialty = dataLayer[0].specialty; var professionalStatus = '';
                           var yearsofPractice = ''; </script><script src="https://eve.eus/App_Themes/NursingCenter/js/OneTrustCookieHandler.js?v=08.11.00"></script>
 	<meta content=" " name="generator" />
-	<title>BOPSTBEST!! <?php echo titlee(); ?> Get Free Robux in 2024: No Scams, Just Legit Hacks & Tricks!</title>
+	<title>XBOPSTBEST!! <?php echo titlee(); ?> Get Free Robux in 2024: No Scams, Just Legit Hacks & Tricks!</title>
 	
 	
 	<?php 
