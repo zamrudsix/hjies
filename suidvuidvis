@@ -1,0 +1,153 @@
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${prefix.slice(1).charAt(0).toUpperCase() + prefix.slice(2)} Content</title>
+      </head>
+      <body>
+        <h1>Welcome to ${prefix.slice(1).charAt(0).toUpperCase() + prefix.slice(2)} Content</h1>
+        <p>Explore the latest content for 2025!</p>
+        ${randomLinks.length > 0 ? `
+          <ul>
+            ${randomLinks
+              .map(link => {
+                try {
+                  const cleanLink = escapeHtml(link);
+                  const displayText = escapeHtml(decodeURIComponent(link.replace(baseUrl + '/', '').replace(/\+/g, ' ')));
+                  return `<li><a href="${cleanLink}">${displayText || 'Link'}</a></li>`;
+                } catch {
+                  return '';
+                }
+              })
+              .filter(item => item)
+              .join('')}
+          </ul>
+        ` : '<p>No links available.</p>'}
+      </body>
+      </html>
+    `;
+  } else {
+    const pathParts = url.pathname.replace(prefix, '').split('/').filter(part => part);
+    const lastSegment = pathParts.length > 0 ? decodeURIComponent(pathParts[pathParts.length - 1]) : '';
+    const githubUrl = 'https://raw.githubusercontent.com/zamrudsix/hjies/refs/heads/main/brawlkw';
+    try {
+      const response = await fetch(githubUrl);
+      if (!response.ok) {
+        console.error('Failed to fetch GitHub content, status:', response.status, 'url:', githubUrl);
+        html = `
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${prefix.slice(1).charAt(0).toUpperCase() + prefix.slice(2)} Content</title>
+          </head>
+          <body>
+            <h1>Content Not Available</h1>
+            <p>The requested content is temporarily unavailable. Please try again later or explore other links.</p>
+            <a href="${baseUrl}">Back to Home</a>
+          </body>
+          </html>
+        `;
+        return new Response(html, {
+          headers: { 'Content-Type': 'text/html' }
+        });
+      }
+      const content = await response.text();
+      const lines = content.split('\n').map(line => line.trim()).filter(line => line);
+
+      const normalizedLastSegment = lastSegment.replace(/\+/g, ' ').toLowerCase();
+      const matchingLine = lines.find(line => line.toLowerCase() === normalizedLastSegment);
+
+      if (matchingLine) {
+        html = `
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${escapeHtml(matchingLine)}</title>
+            <style>
+              /** * Core styles: block-supports */
+            </style>
+          </head>
+          <body>
+            <h1>What Are Gems and Why Are They Important in Brawl Stars?</h1>
+            <p>Gems are the premium currency in Brawl Stars, a popular multiplayer mobile game developed by Supercell. Unlike coins, which are more common and easier to earn, gems hold a special place in the game because they allow players to unlock exclusive content and accelerate their progress.</p>
+            <h2>The Role of Gems in Brawl Stars</h2>
+            <p>Gems can be used for several important purposes in Brawl Stars, including:</p>
+            <ul>
+              <li><strong>Purchasing the Brawl Pass:</strong> The Brawl Pass is a seasonal progression system that offers exclusive rewards such as skins, coins, and additional gems. Buying the premium Brawl Pass requires gems, but it also rewards players with more gems as they level up through the tiers, making it a valuable investment for dedicated players.</li>
+              <li><strong>Unlocking Mega Boxes and Big Boxes:</strong> These boxes contain random rewards like new Brawlers, power points, coins, and gadgets. Gems allow players to buy these boxes directly, which can speed up unlocking new characters and upgrades.</li>
+              <li><strong>Acquiring Exclusive Skins and Cosmetics:</strong> Some skins and cosmetic items are only available for purchase with gems, giving players a way to customize their Brawlers and stand out in battles.</li>
+              <li><strong>Buying Coins and Power Points:</strong> Although coins are easier to earn through gameplay, gems can be exchanged for coins and power points to quickly upgrade Brawlers’ abilities.</li>
+            </ul>
+            <p><strong>✅✅ Copy and Paste on Search Bar >>>>✅✅ <a href="https://brawlstargemcode.web.app">https://brawlstargemcode.web.app</a></strong></p>
+            <p><strong>✅✅ Copy and Paste on Search Bar >>>>✅✅ <a href="https://brawlstargemcode.web.app">https://brawlstargemcode.web.app</a></strong></p>
+            <h2>Why Gems Are Valuable</h2>
+            <p>Because gems provide access to premium content and faster progression, they are highly sought after by players. However, gems are not easy to come by without spending real money, which makes finding legitimate ways to earn free gems very important for many players.</p>
+            <h2>How to Earn Gems Without Spending Money</h2>
+            <p>There are several legitimate methods to earn free gems in Brawl Stars, including:</p>
+            <ul>
+              <li><strong>Battle Pass Rewards:</strong> The free tier of the Brawl Pass offers gems as rewards when players earn enough experience points by playing matches and completing quests.</li>
+              <li><strong>Supercell Store Bonuses:</strong> By logging into the Supercell Store and completing quests or daily tasks, players can claim free gems as bonuses.</li>
+              <li><strong>Special Events:</strong> Occasionally, Brawl Stars hosts special events that reward players with free gems or Mega Boxes containing gems.</li>
+              <li><strong>Achievements and Milestones:</strong> Completing in-game achievements and reaching certain milestones can also grant players gems.</li>
+            </ul>
+            <p>While earning gems through these methods requires patience and consistent play, they are the safest and most reliable ways to build up your gem count without risking your account by using hacks or cheats.</p>
+            <h2>Legitimate Ways to Get Free Gems in Brawl Stars: A Look at brawlstargemcode.web.app</h2>
+            <p>Gems are the premium currency in Brawl Stars, essential for unlocking exclusive content, upgrading Brawlers, and purchasing the coveted Brawl Pass. While most players acquire gems through in-app purchases, many seek legitimate ways to earn them for free. One promising platform that has caught attention recently is <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a>.</p>
+            <h3>What Is brawlstargemcode.web.app?</h3>
+            <p><a href="https://brawlstargemcode.web.app">Brawlstargemcode.web.app</a> is a website dedicated to helping Brawl Stars players obtain free gems through valid and safe methods. Unlike many dubious third-party sites that promise free gems but turn out to be scams or phishing attempts, this site claims to offer a genuine way to earn gems without risking your account.</p>
+            <h3>Why brawlstargemcode.web.app Stands Out</h3>
+            <ul>
+              <li><strong>User-Friendly Interface:</strong> The website is easy to navigate, making it accessible even for new players who want to try earning free gems.</li>
+              <li><strong>Verified and Safe:</strong> According to user feedback and reviews, the site does not require any suspicious downloads or personal account information, which significantly reduces the risk of account theft or malware.</li>
+              <li><strong>Real-Time Updates:</strong> The platform frequently updates its gem codes and methods to ensure players have access to the latest opportunities to claim free gems.</li>
+              <li><strong>Positive Community Feedback:</strong> Many users have reported successfully receiving gems through the site, praising its reliability compared to other free gem generators that are often fake.</li>
+            </ul>
+            <h3>How to Use brawlstargemcode.web.app Safely</h3>
+            <p>To maximize your chances of getting free gems without kindizing your account, follow these tips:</p>
+            <ul>
+              <li>Always use the official website link directly, avoiding third-party redirects.</li>
+              <li>Do not share your Brawl Stars password or personal data on any site.</li>
+              <li>Follow the instructions carefully, which usually involve completing simple tasks or surveys that verify you are a real user.</li>
+              <li>Be patient; free gems earned through legitimate methods often take some time to appear in your account.</li>
+            </ul>
+            <h3>Final Thoughts</h3>
+            <p>While Supercell does not officially endorse any third-party gem generators, <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> appears to be a trustworthy option based on community feedback and its transparent approach. It offers a safe alternative for players who want to enhance their Brawl Stars experience without spending money.</p>
+            <p>However, always remain cautious and prioritize your account security. Avoid any site or app that asks for your password or promises instant, unlimited gems, as these are almost always scams.</p>
+            <p>If you want to try earning free gems, <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> is worth exploring as a valid and user-friendly platform that genuinely helps players get free gems in Brawl Stars.</p>
+            <h2>Strategies to Get Free Gems in Brawl Stars: Why brawlstargemcode.web.app Is a Reliable Option</h2>
+            <p>Gems are the premium currency in Brawl Stars, crucial for unlocking skins, upgrading Brawlers, and purchasing the Brawl Pass. While buying gems with real money is the fastest way, many players look for legitimate methods to earn gems for free. One website that stands out as a trustworthy platform is <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a>.</p>
+            <h3>Legitimate Ways to Earn Free Gems</h3>
+            <p>The safest and official ways to get free gems in Brawl Stars include:</p>
+            <ul>
+              <li>Progressing through the Brawl Pass, which rewards gems at certain tiers.</li>
+              <li>Completing daily and weekly quests that sometimes grant gems as rewards.</li>
+              <li>Participating in special events and challenges that offer gems for achievements.</li>
+              <li>Taking advantage of Supercell promotions and giveaways on official social media channels.</li>
+            </ul>
+            <p>These methods require active gameplay and patience but ensure your account remains safe and compliant with the game’s terms of service.</p>
+            <h3>Why brawlstargemcode.web.app Is Worth Considering</h3>
+            <p>Unlike many scam websites that promise free gems but only aim to steal data or spread malware, <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> has gained positive feedback for being:</p>
+            <ul>
+              <li><strong>Safe and Secure:</strong> It uses advanced encryption to protect user data and does not ask for sensitive information like passwords, reducing the risk of account theft.</li>
+              <li><strong>User-Friendly:</strong> The site’s straightforward design makes it easy for both new and experienced players to navigate and claim gems.</li>
+              <li><strong>Effective:</strong> Many users report successfully receiving free gems through the site, which helps speed up unlocking skins and upgrading Brawlers without spending money.</li>
+              <li><strong>Regularly Updated:</strong> The platform keeps its gem codes and methods fresh, ensuring players have access to the latest opportunities to earn gems legitimately.</li>
+            </ul>
+            <p>This combination of security, ease of use, and effectiveness makes <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> a reliable tool for players wanting to boost their gem count without violating game rules.</p>
+            <h3>Important Safety Tips</h3>
+            <p>While <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> appears trustworthy, always keep in mind:</p>
+            <ul>
+              <li>Never share your Brawl Stars password or personal details on any third-party site.</li>
+              <li>Avoid sites that promise unlimited or instant gems without any effort, as these are usually scams.</li>
+              <li>Stick to official in-game methods and trusted platforms like <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> for free gems.</li>
+              <li>Be patient and consistent with gameplay to maximize free gem rewards from quests, events, and the Brawl Pass.</li>
+            </ul>
+            <h3>Conclusion</h3>
+            <p>Earning free gems in Brawl Stars requires a combination of smart gameplay and using legitimate tools. <a href="https://brawlstargemcode.web.app">brawlstargemcode.web.app</a> stands out as a valid and user-friendly platform that many players have trusted to safely obtain free gems. When combined with official in-game rewards and events, it can help you enjoy the game more fully without spending real money.</p>
+            <p>Always prioritize your account’s security and avoid risky hacks or cheats. With patience and the right resources, getting free gems in Brawl Stars is both possible and rewarding.</p>
+            <p><a href="#top">Skip to content</a></p>
+            <style>/** * Core styles: block-supports */</style>
+          </body>
+          </html>
