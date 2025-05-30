@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype='http://schema.org/WebPage' lang='en' xmlns:og='http://ogp.me/ns#' xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Brawl Stars Free Gems Glitch Tricks and Tips on Strikingly</title>
+<title>${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips on Strikingly</title>
 <!-- removing_gon has activated 100%, so we add not_removing_gon rollout for specific user -->
 <script>
 //<![CDATA[
@@ -293,22 +293,22 @@ window.$S={};$S.app_instances=[];$S.nav=[{"name":null,"uid":"7dd3f4d3-c11d-4062-
 {
   "@context": "https://schema.org",
   "@type": "website",
-  "name": "Brawl Stars Free Gems Glitch Tricks and Tips",
+  "name": "${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips",
   "description": ""
 }
 
 </script>
 <meta content='website' property='og:type'>
-<meta content='Brawl Stars Free Gems Glitch Tricks and Tips on Strikingly' property='og:title'>
+<meta content='${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips on Strikingly' property='og:title'>
 <meta content='https://brawlstarsgemstips.mystrikingly.com/' property='og:url'>
 <meta content='https://static-assets.strikinglycdn.com/images/fb_images/default.png' property='og:image'>
-<meta content='Brawl Stars Free Gems Glitch Tricks and Tips' property='og:site_name'>
+<meta content='${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips' property='og:site_name'>
 <meta content='' property='og:description'>
-<meta content='Brawl Stars Free Gems Glitch Tricks and Tips' itemprop='name'>
+<meta content='${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips' itemprop='name'>
 <meta content='' itemprop='description'>
 <meta content='https://static-assets.strikinglycdn.com/images/fb_images/default.png' itemprop='image'>
 <meta content='summary_large_image' name='twitter:card'>
-<meta content='Brawl Stars Free Gems Glitch Tricks and Tips on Strikingly' name='twitter:title'>
+<meta content='${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips on Strikingly' name='twitter:title'>
 <meta content='' name='twitter:description'>
 <meta content='https://static-assets.strikinglycdn.com/images/fb_images/default.png' name='twitter:image'>
 <meta content='' name='description'>
@@ -323,7 +323,6 @@ window.$S={};$S.app_instances=[];$S.nav=[{"name":null,"uid":"7dd3f4d3-c11d-4062-
 <link href="https://static-assets.strikinglycdn.com/images/favicon.ico" rel="apple-touch-icon" sizes="152x152" />
 <link href="https://static-assets.strikinglycdn.com/images/favicon.ico" rel="apple-touch-icon" sizes="167x167" />
 <link href="https://static-assets.strikinglycdn.com/images/favicon.ico" rel="apple-touch-icon" sizes="180x180" />
-<link rel="canonical" href="https://brawlstarsgemstips.mystrikingly.com/" />
 <script>
   if (!window.utils) window.utils = {}
   window.utils.getCookieByName = (name) => {
