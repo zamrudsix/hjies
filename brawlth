@@ -399,7 +399,7 @@ window.runAfterDomBinding = {
                                                         <div bis_skin_checked="1">
                                                             <div bis_skin_checked="1">
                                                                 <div bis_skin_checked="1">
-                                                                    <h1 style="text-align: center; font-size: 48px;"><span style="color: #1b7926;">Brawl Stars Free Gems Glitch Tricks and Tips</span></h1>
+                                                                    <h1 style="text-align: center; font-size: 48px;"><span style="color: #1b7926;">${escapeHtml(brand)} Brawl Stars Free Gems Glitch Tricks and Tips</span></h1>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -410,7 +410,7 @@ window.runAfterDomBinding = {
                                                                 <div bis_skin_checked="1">
                                                                     <p style="text-align: center;">&nbsp;<br></p>
                                                                     <p style="text-align: center;">Top tip:<span style="color: #3c10ee;">&nbsp;<a href="https://pentiumtechnologies.com/brawl">Getting Free Gems in Brawl Stars</a></span></p>
-                                                                    <p style="text-align: center;">I want to share with you my exciting adventure in the world of Brawl Stars, where I discovered the secret to <em>getting free gems</em> without breaking the bank. So, grab your favorite brawler and let's dive into this gem of a story!</p>
+                                                                    <p style="text-align: center;">${escapeHtml(brand)} I want to share with you my exciting adventure in the world of Brawl Stars, where I discovered the secret to <em>getting free gems</em> without breaking the bank. So, grab your favorite brawler and let's dive into this gem of a story!</p>
                                                                     <p style="text-align: center;">The Quest Begins</p>
                                                                     <p style="text-align: center;">It
                                                                         all started when I realized how valuable gems are in Brawl Stars. They
