@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Master Free Spin - Get Free Spins Now!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #f7931e;
+            --accent-color: #4ecdc4;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="coin" cx="50%" cy="30%"><stop offset="0%" style="stop-color:%23ffd700"/><stop offset="100%" style="stop-color:%23ff8c00"/></radialGradient></defs><circle cx="200" cy="150" r="80" fill="url(%23coin)" opacity="0.3"/><circle cx="800" cy="200" r="60" fill="url(%23coin)" opacity="0.2"/><circle cx="1000" cy="400" r="100" fill="url(%23coin)" opacity="0.1"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            opacity: 0.1;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { transform: translateX(0%) translateY(0%); }
+            50% { transform: translateX(5%) translateY(-5%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            margin-bottom: 1.5rem;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #f8f9fa;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .features-section {
+            background: #fff;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: skewY(-2deg);
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+        }
+
+        .article-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .article-content {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .stats-section {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-coin {
+            position: absolute;
+            color: #ffd700;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .floating-coin:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-coin:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+        .floating-coin:nth-child(3) { top: 40%; left: 90%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 107, 53, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .cta-button { padding: 15px 30px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <i class="fas fa-coins floating-coin fa-2x"></i>
+        <i class="fas fa-coins floating-coin fa-3x"></i>
+        <i class="fas fa-coins floating-coin fa-2x"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center hero-content">
+                    <h1 class="hero-title">
+                        <i class="fas fa-coins me-3"></i>
+                        COIN MASTER<br>
+                        <span style="color: var(--accent-color);">FREE SPIN</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Get unlimited free spins every day! Build your best village and attack your friends with unlimited free spins!
+                    </p>
+                    <a href="https://coinmaster.kavaciksporium.com/+cmma" class="btn cta-button pulse-btn" target="_blank">
+                        <i class="fas fa-gift me-2"></i>
+                        GET FREE SPINS NOW
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1000000">0</span>
+                        <span>Active Players</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50000">0</span>
+                        <span>Spins Generated</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="24">0</span>
+                        <span>Hours Online</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="99">0</span>
+                        <span>% Uptime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Fast Free Spins</h4>
+                        <p>Get free spins in seconds! Automated process without waiting time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>100% Safe</h4>
+                        <p>Safe and trusted spin generator. No risk of getting banned or losing your account.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4>Daily Updates</h4>
+                        <p>Free spin links updated daily to ensure you always get the latest spins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Section -->
+    <section class="article-section">
+        <div class="container">
+            <h2 class="section-title">Complete Coin Master Guide</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="article-card">
+                        <div class="article-content">
+                            <h3><i class="fas fa-gamepad me-2" style="color: var(--primary-color);"></i>How to Play Coin Master</h3>
+                            <p>Coin Master is a mobile game that combines slot machine elements with village building strategy. Players use spins to get coins, attack other players' villages, or conduct raids to steal coins.</p>
+                            <p><strong>Gameplay Tips:</strong></p>
+                            <ul>
+                                <li>Collect as many coins as possible to upgrade your village</li>
+                                <li>Use shields to protect your village from attacks</li>
+                                <li>Attack and raid other players' villages for extra coins</li>
+                                <li>Collect cards to complete sets and earn rewards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="article-card">
+                        <div class="article-content">
+                            <h3><i class="fas fa-coins me-2" style="color: var(--secondary-color);"></i>Free Spin Strategies</h3>
+                            <p>Spins are the main currency in Coin Master. Without spins, you can't play and develop your village. Here's how to get free spins:</p>
+                            <p><strong>Official Methods:</strong></p>
+                            <ul>
+                                <li>Wait 5 minutes for automatic spin regeneration</li>
+                                <li>Watch video ads for bonus spins</li>
+                                <li>Follow official social media for free spin links</li>
+                                <li>Invite friends to get spin rewards</li>
+                            </ul>
+                            <p><strong>Link Generator:</strong> Use trusted link generators like the one we provide to get unlimited spins.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="article-card">
+                        <div class="article-content">
+                            <h3><i class="fas fa-home me-2" style="color: var(--accent-color);"></i>Village Building Tips</h3>
+                            <p>Building villages is the core of Coin Master gameplay. Each village has a unique theme and requires different amounts of coins.</p>
+                            <p><strong>Effective Strategies:</strong></p>
+                            <ul>
+                                <li>Upgrade the cheapest items first</li>
+                                <li>Save coins for the most expensive item at the end</li>
+                                <li>Use hammers to get 50% discount</li>
+                                <li>Activate rhino to get extra coins from raids</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="article-card">
+                        <div class="article-content">
+                            <h3><i class="fas fa-trophy me-2" style="color: var(--primary-color);"></i>Events and Tournaments</h3>
+                            <p>Coin Master regularly hosts events and tournaments with attractive rewards like free spins, coins, and rare cards.</p>
+                            <p><strong>Event Types:</strong></p>
+                            <ul>
+                                <li><strong>Attack Madness:</strong> Attack other players' villages for points</li>
+                                <li><strong>Raid Madness:</strong> Conduct raids to collect points</li>
+                                <li><strong>Village Master:</strong> Complete villages to get rewards</li>
+                                <li><strong>Card Boom:</strong> Collect cards with high drop rates</li>
+                            </ul>
+                            <p>Take advantage of these events to get maximum rewards and accelerate your game progress!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero-section" style="min-height: 60vh;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center hero-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        Ready to Start Your Adventure?
+                    </h2>
+                    <p class="hero-subtitle">
+                        Don't waste this golden opportunity! Get free spins now and dominate Coin Master!
+                    </p>
+                    <a href="https://coinmaster.kavaciksporium.com/+cmma" class="btn cta-button pulse-btn" target="_blank">
+                        <i class="fas fa-rocket me-2"></i>
+                        START NOW - FREE!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.classList.contains('stats-section')) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            // Add scroll effect to feature cards
+            const cards = document.querySelectorAll('.feature-card, .article-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add particle effect on button hover
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
